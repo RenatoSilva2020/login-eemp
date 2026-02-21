@@ -1,0 +1,5 @@
+{
+  "name": "Sistema de Autenticação",
+  "description": "Sistema de login simples validando matrícula em uma planilha Google Sheets.",
+  "requestFramePermissions": []
+}
