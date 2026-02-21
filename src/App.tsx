@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Loader2, CheckCircle2, AlertCircle, ArrowRight, Lock } from 'lucide-react';
 import Papa from 'papaparse';
+import InstallPrompt from './components/InstallPrompt';
 
 export default function App() {
   const [matricula, setMatricula] = useState('');
@@ -70,6 +71,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center p-4 font-sans overflow-hidden bg-slate-50">
+      <InstallPrompt />
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-purple-200/40 blur-[120px] animate-pulse" />
