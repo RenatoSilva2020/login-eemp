@@ -65,14 +65,13 @@ export default function InstallPrompt() {
               <X size={16} />
             </button>
 
-            <div className="flex items-center gap-4">
-              <div className="flex-1">
-                <h3 className="font-semibold text-slate-900 mb-1">Instalar Aplicativo</h3>
-                <p className="text-sm text-slate-500 mb-3">
-                  Adicione este portal à sua tela inicial para acesso rápido e fácil.
-                </p>
+            <div className="relative">
+              <h3 className="font-semibold text-slate-900 mb-1 pr-8">Instalar App</h3>
+              <p className="text-sm text-slate-500 mb-4">
+                Adicione este portal à sua tela inicial para acesso rápido.
+              </p>
 
-                {isIOS ? (
+              {isIOS ? (
                   <div className="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
                     <p className="flex items-center gap-2 mb-1">
                       1. Toque em <Share size={14} className="text-blue-500" /> (Compartilhar)
@@ -90,7 +89,6 @@ export default function InstallPrompt() {
                     Instalar Agora
                   </button>
                 )}
-              </div>
             </div>
           </div>
         </motion.div>
