@@ -15,9 +15,8 @@ export default function App() {
   const [error, setError] = useState('');
   const [successData, setSuccessData] = useState<{ nome: string } | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!matricula.trim()) return;
+  const verifyMatricula = async (mat: string) => {
+    if (!mat.trim()) return;
 
     setLoading(true);
     setError('');
@@ -47,19 +46,24 @@ export default function App() {
       // Find user with matching matricula
       const user = data.find((row) => {
         const rowMatricula = row['Matrícula'] || row['Matricula'] || row['MATRICULA'] || row['id'] || row['ID'];
-        return String(rowMatricula).trim() === String(matricula).trim();
+        return String(rowMatricula).trim() === String(mat).trim();
       });
 
       if (user) {
         const nome = user['Nome'] || user['NOME'] || user['Name'] || user['Aluno'] || "Usuário";
         setSuccessData({ nome });
         
+        // Save to localStorage
+        localStorage.setItem('userMatricula', mat);
+
         // Redirect after delay
         setTimeout(() => {
           window.location.href = 'https://professorrsilva.my.canva.site/eemp26';
         }, 3000);
       } else {
         setError('Matrícula não encontrada. Verifique e tente novamente.');
+        // Clear invalid matricula from storage if it was there
+        localStorage.removeItem('userMatricula');
       }
     } catch (err) {
       console.error(err);
@@ -67,6 +71,19 @@ export default function App() {
     } finally {
       setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    const savedMatricula = localStorage.getItem('userMatricula');
+    if (savedMatricula) {
+      setMatricula(savedMatricula);
+      verifyMatricula(savedMatricula);
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    verifyMatricula(matricula);
   };
 
   return (

@@ -65,11 +65,7 @@ export default function InstallPrompt() {
               <X size={16} />
             </button>
 
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shrink-0 border border-slate-100 p-1">
-                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
-              </div>
-              
+            <div className="flex items-center gap-4">
               <div className="flex-1">
                 <h3 className="font-semibold text-slate-900 mb-1">Instalar Aplicativo</h3>
                 <p className="text-sm text-slate-500 mb-3">
