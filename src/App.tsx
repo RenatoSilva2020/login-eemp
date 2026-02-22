@@ -7,12 +7,14 @@ import React, { useState, useEffect } from 'react';
 import LoginScreen from './components/LoginScreen';
 import WelcomeScreen from './components/WelcomeScreen';
 import InstructionsScreen from './components/InstructionsScreen';
+import InstallingScreen from './components/InstallingScreen';
 
 export default function App() {
   const [isStandalone, setIsStandalone] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isIOS, setIsIOS] = useState(false);
   const [hasInstalled, setHasInstalled] = useState(false);
+  const [isInstalling, setIsInstalling] = useState(false);
 
   useEffect(() => {
     // Check if it's iOS
@@ -37,13 +39,17 @@ export default function App() {
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
     // Listen for app installed event
-    window.addEventListener('appinstalled', () => {
+    const handleAppInstalled = () => {
       setHasInstalled(true);
+      setIsInstalling(false);
       setDeferredPrompt(null);
-    });
+    };
+
+    window.addEventListener('appinstalled', handleAppInstalled);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener('appinstalled', handleAppInstalled);
     };
   }, []);
 
@@ -55,8 +61,13 @@ export default function App() {
     
     if (outcome === 'accepted') {
       setDeferredPrompt(null);
-      // Wait for appinstalled event usually, but we can set state here too
-      setHasInstalled(true);
+      setIsInstalling(true);
+      // Fallback: if appinstalled doesn't fire within 5 seconds, assume installed or show instructions
+      // This helps in some browsers where the event might be missed or delayed
+      setTimeout(() => {
+        setIsInstalling(false);
+        setHasInstalled(true);
+      }, 5000);
     }
   };
 
@@ -69,10 +80,12 @@ export default function App() {
         <div className="absolute -bottom-[20%] left-[20%] w-[50%] h-[50%] rounded-full bg-blue-200/40 blur-[120px] animate-pulse delay-2000" />
       </div>
 
-      {isStandalone ? (
+      {isStandalone || isIOS ? (
         <LoginScreen />
       ) : hasInstalled ? (
         <InstructionsScreen />
+      ) : isInstalling ? (
+        <InstallingScreen />
       ) : (
         <WelcomeScreen 
           onInstall={handleInstall} 

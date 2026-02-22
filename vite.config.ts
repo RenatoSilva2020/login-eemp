@@ -16,8 +16,8 @@ export default defineConfig(({mode}) => {
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
         manifest: {
-          name: 'Portal de Acesso Escolar',
-          short_name: 'Portal Escolar',
+          name: 'e-Escolar',
+          short_name: 'e-Escolar',
           description: 'Sistema de autenticação para acesso ao portal do aluno',
           theme_color: '#ffffff',
           background_color: '#ffffff',

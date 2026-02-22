@@ -90,10 +90,10 @@ export default function LoginScreen() {
       >
         {/* Header */}
         <div className="p-8 pb-0 text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/20 mb-6">
-            <Lock className="text-white" size={24} />
+          <div className="mb-6">
+            <img src="https://i.ibb.co/JFKTr9sc/logo.png" alt="Logo" className="w-24 h-24 mx-auto object-contain" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-2 tracking-tight">Portal de Acesso</h1>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2 tracking-tight">e-Escolar</h1>
           <p className="text-slate-500 text-sm">Digite sua matrícula para continuar</p>
         </div>
 
