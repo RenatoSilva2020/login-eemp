@@ -24,10 +24,10 @@ export default function InstructionsScreen() {
         </p>
 
         <button
-          onClick={() => window.location.reload()}
+          onClick={() => window.location.href = 'https://www.google.com'}
           className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-4 px-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2"
         >
-          Tentar Acessar Agora
+          OK
         </button>
       </motion.div>
     </div>
