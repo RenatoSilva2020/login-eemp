@@ -49,11 +49,6 @@ export default function LoginScreen() {
         
         // Save to localStorage
         localStorage.setItem('userMatricula', mat);
-
-        // Redirect after delay
-        setTimeout(() => {
-          window.location.href = 'https://professorrsilva.my.canva.site/eemp26';
-        }, 3000);
       } else {
         setError('Matrícula não encontrada. Verifique e tente novamente.');
         // Clear invalid matricula from storage if it was there
@@ -125,10 +120,25 @@ export default function LoginScreen() {
                 <p className="text-slate-500 mb-8">
                   Autenticação realizada com sucesso!
                 </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-600">
-                  <Loader2 className="animate-spin" size={14} />
-                  <span>Redirecionando...</span>
-                </div>
+                
+                <button
+                  onClick={() => window.location.href = 'https://professorrsilva.my.canva.site/eemp26'}
+                  className="w-full relative group overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-medium py-4 px-4 rounded-2xl transition-all duration-300 shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 mb-4"
+                >
+                  <span>Acessar Sistema</span>
+                  <ArrowRight size={20} />
+                </button>
+
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('userMatricula');
+                    setSuccessData(null);
+                    setMatricula('');
+                  }}
+                  className="text-sm text-slate-500 hover:text-slate-700 underline underline-offset-4 transition-colors"
+                >
+                  Trocar de usuário
+                </button>
               </motion.div>
             ) : (
               <motion.form
