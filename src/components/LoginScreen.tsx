@@ -159,9 +159,14 @@ export default function LoginScreen() {
                   <div className="relative group">
                     <input
                       id="matricula"
-                      type="text"
+                      type="tel"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       value={matricula}
-                      onChange={(e) => setMatricula(e.target.value)}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '');
+                        setMatricula(val);
+                      }}
                       placeholder="Ex: 123456"
                       className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-300"
                       disabled={loading}
