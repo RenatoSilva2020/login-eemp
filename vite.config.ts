@@ -26,12 +26,12 @@ export default defineConfig(({mode}) => {
           start_url: './',
           icons: [
             {
-              src: 'logo.png',
+              src: 'https://i.ibb.co/HpDdXdtv/logo-e-escolar.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'logo.png',
+              src: 'https://i.ibb.co/HpDdXdtv/logo-e-escolar.png',
               sizes: '512x512',
               type: 'image/png'
             }
