@@ -14,10 +14,10 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'https://i.ibb.co/8gM6hKDy/logo-sis.png', 'mask-icon.svg'],
+        includeAssets: ['favicon.ico', 'https://i.ibb.co/wZY6D3g2/logo-e.png', 'mask-icon.svg'],
         manifest: {
-          name: 'e-Escolar EEMP',
-          short_name: 'e-Escolar EEMP',
+          name: 'e-Escolar MÁRIO PORTO',
+          short_name: 'e-Escolar MÁRIO PORTO',
           description: 'Sistema de autenticação para acesso ao portal do aluno',
           theme_color: '#ffffff',
           background_color: '#ffffff',
@@ -26,12 +26,12 @@ export default defineConfig(({mode}) => {
           start_url: './',
           icons: [
             {
-              src: 'https://i.ibb.co/8gM6hKDy/logo-sis.png',
+              src: 'https://i.ibb.co/wZY6D3g2/logo-e.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'https://i.ibb.co/8gM6hKDy/logo-sis.png',
+              src: 'https://i.ibb.co/wZY6D3g2/logo-e.png',
               sizes: '512x512',
               type: 'image/png'
             }
