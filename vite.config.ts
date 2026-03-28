@@ -16,8 +16,8 @@ export default defineConfig(({mode}) => {
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'https://i.ibb.co/8gM6hKDy/logo-sis.png', 'mask-icon.svg'],
         manifest: {
-          name: 'e-Escolar',
-          short_name: 'e-Escolar',
+          name: 'e-Escolar EEMP',
+          short_name: 'e-Escolar EEMP',
           description: 'Sistema de autenticação para acesso ao portal do aluno',
           theme_color: '#ffffff',
           background_color: '#ffffff',
