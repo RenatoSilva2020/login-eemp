@@ -14,7 +14,7 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'https://i.ibb.co/MyN2VfTv/logo-eemp.png', 'mask-icon.svg'],
+        includeAssets: ['favicon.ico', 'https://i.ibb.co/8gM6hKDy/logo-sis.png', 'mask-icon.svg'],
         manifest: {
           name: 'e-Escolar',
           short_name: 'e-Escolar',
@@ -26,12 +26,12 @@ export default defineConfig(({mode}) => {
           start_url: './',
           icons: [
             {
-              src: 'https://i.ibb.co/MyN2VfTv/logo-eemp.png',
+              src: 'https://i.ibb.co/8gM6hKDy/logo-sis.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'https://i.ibb.co/MyN2VfTv/logo-eemp.png',
+              src: 'https://i.ibb.co/8gM6hKDy/logo-sis.png',
               sizes: '512x512',
               type: 'image/png'
             }
