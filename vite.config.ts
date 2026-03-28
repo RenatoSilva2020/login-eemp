@@ -16,8 +16,8 @@ export default defineConfig(({mode}) => {
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'https://i.ibb.co/wZY6D3g2/logo-e.png', 'mask-icon.svg'],
         manifest: {
-          name: 'e-Escolar MÁRIO PORTO',
-          short_name: 'e-Escolar MÁRIO PORTO',
+          name: 'e-Escolar MárioPorto',
+          short_name: 'e-Escolar MárioPorto',
           description: 'Sistema de autenticação para acesso ao portal do aluno',
           theme_color: '#ffffff',
           background_color: '#ffffff',
