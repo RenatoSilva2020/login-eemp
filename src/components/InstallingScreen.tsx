@@ -12,7 +12,7 @@ export default function InstallingScreen() {
         className="bg-white/70 backdrop-blur-xl border border-white/50 rounded-3xl shadow-2xl shadow-slate-200/50 overflow-hidden p-8 text-center"
       >
         <div className="mb-6">
-          <img src="https://i.ibb.co/JFKTr9sc/logo.png" alt="Logo" className="w-24 h-24 mx-auto object-contain animate-pulse" />
+          <img src="https://i.ibb.co/TqLqqTbS/logo-eemp.png" alt="Logo" className="w-24 h-24 mx-auto object-contain animate-pulse" />
         </div>
 
         <h2 className="text-2xl font-bold text-slate-900 mb-4">
