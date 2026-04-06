@@ -14,7 +14,7 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'https://i.ibb.co/wZY6D3g2/logo-e.png', 'mask-icon.svg'],
+        includeAssets: ['favicon.ico', 'https://i.ibb.co/TqLqqTbS/logo-eemp.png', 'mask-icon.svg'],
         manifest: {
           name: 'SIS EEMP',
           short_name: 'SIS EEMP',
@@ -26,12 +26,12 @@ export default defineConfig(({mode}) => {
           start_url: './',
           icons: [
             {
-              src: 'https://i.ibb.co/wZY6D3g2/logo-e.png',
+              src: 'https://i.ibb.co/TqLqqTbS/logo-eemp.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'https://i.ibb.co/wZY6D3g2/logo-e.png',
+              src: 'https://i.ibb.co/TqLqqTbS/logo-eemp.png',
               sizes: '512x512',
               type: 'image/png'
             }
