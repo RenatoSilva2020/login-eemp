@@ -1,5 +1,5 @@
 {
-  "name": "Sistema de Autenticação",
-  "description": "Sistema de login simples validando matrícula em uma planilha Google Sheets.",
+  "name": "SuperMarket List",
+  "description": "A smart shopping list app to track items, prices, and total purchase value in real-time with purchase history.",
   "requestFramePermissions": []
 }
